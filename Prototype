@@ -1,0 +1,20 @@
+# Interfaz Prototype
+class Prototype:
+    def clone(self):
+        raise NotImplementedError()
+
+# Clase concreta de prototipo
+class Persona(Prototype):
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+    def clone(self):
+        return Persona(self.nombre, self.edad)
+
+# Ejemplo de uso
+persona = Persona("Juan Pérez", 30)
+persona_copia = persona.clone()
+
+print(persona_copia.nombre)  # "Juan Pérez"
+print(persona_copia.edad)  # 30
